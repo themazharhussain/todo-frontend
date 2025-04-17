@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+  text-align: center;
+}
+// button {
+//   display: block;
+//   width: 20%;
+//   padding: 10px;
+//   margin: auto;
+//   border-radius: 10px;
+//   border: 3px sold gray;
+// }
+nav {
+  background-color: rgb(179, 204, 225);
+  display: flex;
+  justify-content: space-evenly;
+  a {
+    text-decoration: none;
+    // :active {
+    //   background-color: red;
+    //   color: bisque;
+    // }
+  }
+}
+
+// form{
+//     margin:20px;
+//     button{
+//         padding:0
+//     }
+// }

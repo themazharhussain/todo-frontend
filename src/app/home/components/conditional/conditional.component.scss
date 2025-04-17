@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+
+  .user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+    padding: 10px;
+    margin:20px;
+    border-radius: 5px;
+    .content{
+      .img-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    img {
+      display: block;
+      width: 125px;
+      height: 125px;
+      aspect-ratio: 1.5;
+      border-radius: 50%;
+    }
+  }
+}

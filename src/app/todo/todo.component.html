@@ -1,0 +1,65 @@
+<div class="todo-container">
+  <label for="search"></label>
+  <input
+    id="search"
+    type="text"
+    (input)="searchTodo($event)"
+    placeholder="Search Todo..."
+  />
+  <form
+    [formGroup]="todoForm"
+    (ngSubmit)="editingTodoId ? updateTodo() : addTodo()"
+    class="todo-form"
+  >
+    <label for="title">Enter a Todo</label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="e.g., Buy groceries"
+    />
+    <button type="submit" [disabled]="!todoForm.valid">
+      {{ editingTodoId ? "Update" : "Add" }}Todo
+    </button>
+  </form>
+
+  <div class="todo-list-section">
+    <h2>All Todos</h2>
+    <ul class="todo-list">
+      <!-- <div class="select-all">
+        <input
+        class="checkbox"
+        type="checkbox"
+        [checked]="checked"
+        (change)="toggleAllTodos()"
+        [disabled]="todos.length === 0" 
+        /><span> Select All </span>
+      </div> -->
+      @for ( todo of (searchedTodos.length ? searchedTodos :todos); track
+      todo.id) {
+      <li class="todo-item">
+        <div>
+          <div>
+            <input
+              class="checkbox"
+              type="checkbox"
+              [checked]="todo.isCompleted"
+              (change)="completeTodo(todo.id)"
+            />
+          </div>
+        </div>
+        <div><strong>Title:</strong> {{ todo.title }}</div>
+        <!-- <div>
+          <strong>Created At:</strong> {{ todo.createdAt | date : "short" }}
+        </div> -->
+        <div class="btn-container">
+          <button (click)="editTodo(todo.id)">Edit</button>
+          <button (click)="deleteTodo(todo.id)">Delete</button>
+        </div>
+      </li>
+      }@empty {
+      <li>There are no items</li>
+      }
+    </ul>
+  </div>
+</div>

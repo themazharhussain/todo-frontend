@@ -1,0 +1,15 @@
+<div>
+  <!-- Loader appears during route changes -->
+  <!-- <app-loader *ngIf="isLoading"></app-loader> -->
+
+  <nav style="display: flex; gap: 10px">
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/form" routerLinkActive="active">Form</a>
+    <a routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a>
+    <a routerLink="/todo" routerLinkActive="active">Todo</a>
+    <a routerLink="/todo-with-db" routerLinkActive="active">Todo With DB</a>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+  </nav>
+  <router-outlet />
+</div>

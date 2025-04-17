@@ -1,0 +1,126 @@
+/* Typography */
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Container */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Labels & Inputs */
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .validation-message{
+    width: 100%;
+    text-align: start;
+    color: #c62828;
+    //background-color: red;
+  }
+  input[type="text"] {
+    padding: 0.75rem;
+    margin-bottom: .2rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  /* Buttons */
+  button {
+    // margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #43a047;
+  }
+  
+  button:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  
+  /* Todo List Container */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  /* Todo Item */
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Checkbox */
+  input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  /* Delete Button */
+  li button {
+    background-color: #e53935;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+  }
+  
+  li button:hover {
+    background-color: #c62828;
+  }
+  
+  /* Completed Todo Text */
+  .todo-text.completed {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  /* Empty State */
+  p.no-todo {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #757575;
+    margin-top: 2rem;
+  }
+  

@@ -1,0 +1,57 @@
+<!-- <app-simple-loader *ngIf="isLoading"></app-simple-loader> -->
+
+<app-loader *ngIf="isLoading"></app-loader>
+
+<h2>Todo List</h2>
+<h2>Add todo</h2>
+
+<form [formGroup]="todoForm" (ngSubmit)="addNewTodo()">
+  <label class="">
+    Title
+  </label>
+    <input
+      type="text"
+      formControlName="title"
+      placeholder="Enter a title (3–50 characters)"
+    />
+
+  <div
+    *ngIf="todoForm.get('title')?.invalid && todoForm.get('title')?.touched"
+    class="validation-message"
+  >
+    <small *ngIf="todoForm.get('title')?.errors?.['required']">Title is required.</small>
+    <small *ngIf="todoForm.get('title')?.errors?.['pattern']">
+      Title must be 3–50 characters long (letters, numbers, spaces only).
+    </small>
+  </div>
+
+  <button style="margin-top:.4rem" type="submit" [disabled]="!todoForm.valid">Submit</button>
+</form>
+
+
+<!-- Display Todo List -->
+@if (todos.length > 0) {
+<ul>
+  <li *ngFor="let todo of todos">
+    <div style="display: flex; align-items: center">
+      <input
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="toggleCompleted(todo._id)"
+      />
+      <p [ngClass]="{ 'todo-text': true, completed: todo.completed }">
+        {{ todo.title }}
+      </p>
+    </div>
+    <button (click)="deleteTodo(todo._id)">Delete</button>
+  </li>
+</ul>
+} @else {
+<p style="text-align: center;">No todo is yet added</p>
+}
+
+<div style="position: absolute; right: 10px; bottom: 10px;">
+  <button (click)="deleteAllTodos()">
+   Delete all todo
+  </button>
+</div>

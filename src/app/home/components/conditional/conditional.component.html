@@ -1,0 +1,20 @@
+<div class="container">
+  @for(user of users; track user.id){
+  <div class="user-info">
+    <div class="content">
+      <div class="img-container">
+        <img
+          [ngSrc]="user.userDetail.image"
+          [alt]="user.name"
+          width="200"
+          height="125"
+          priority
+        />
+      </div>
+      <p>Name: {{ user.name }}</p>
+      <p>Email: {{ user.userDetail.email }}</p>
+      <p>Role: {{ user.userDetail.role }}</p>
+    </div>
+  </div>
+  }
+</div>

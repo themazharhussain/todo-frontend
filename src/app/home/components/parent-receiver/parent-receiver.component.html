@@ -1,0 +1,6 @@
+<div [style.background-color]="parentBgColor">
+  <h1>
+    This is Parent component which will receive something fro child component
+  </h1>
+  <app-child-sender (changeColor)="onChangeColor($event)"></app-child-sender>
+</div>
