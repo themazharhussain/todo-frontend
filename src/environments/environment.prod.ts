@@ -1,6 +1,4 @@
 export const environment = {
-  production: false,
-  API_URL: 'http://localhost:8080/api',
-  APP_NAME: 'Todo App',
-  ENABLE_LOGGING: true,
+  production: true,
+  apiBaseUrl: 'https://todo-backend-apps.up.railway.app/api',
 };
