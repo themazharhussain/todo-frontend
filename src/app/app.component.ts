@@ -11,11 +11,12 @@ import { LoaderService } from './shared/services/loader.service';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from "./shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,CommonModule],
+  imports: [CommonModule,RouterOutlet],
   templateUrl: './app.component.html',
   styles: [],
 })

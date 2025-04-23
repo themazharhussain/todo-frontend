@@ -4,7 +4,7 @@ import { ConditionalComponent } from './components/conditional/conditional.compo
 import { PropsComponent } from './components/props/props.component';
 import { ParentReceiverComponent } from './components/parent-receiver/parent-receiver.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "../shared/components/header/header.component";
+import { HeaderComponent } from "../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-home',

@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 h1 {
   text-align: center;
 }
@@ -11,7 +31,7 @@ h1 {
 //   border: 3px sold gray;
 // }
 nav {
-  background-color: rgb(179, 204, 225);
+  //background-color: rgb(179, 204, 225);
   display: flex;
   justify-content: space-evenly;
   a {
