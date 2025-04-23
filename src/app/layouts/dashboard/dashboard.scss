@@ -1,0 +1,134 @@
+/* Layout Container */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #1f2937;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 5;
+  transform: translateX(0); /* Initial state (expanded) */
+  transition: transform 0.3s ease;
+}
+
+/* When sidebar is collapsed, translate it out of view */
+.layout-container.collapsed .sidebar {
+  transform: translateX(-100%);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  margin-left: 260px; /* Adjust main content width when sidebar is expanded */
+  transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+/* Adjust content area when sidebar is collapsed */
+.layout-container.collapsed .main-content {
+  margin-left: 0;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease; /* Smooth transition for button movement */
+}
+
+/* Button position when sidebar is collapsed */
+.layout-container.collapsed .toggle-btn {
+  left: 10px; /* You can adjust this value if you want to move the button */
+}
+
+/* Optional: Adjust button position for a more suitable placement when collapsed */
+.layout-container.collapsed .toggle-btn {
+  left: 0; /* Move button to the left of the page when collapsed */
+}
+
+/* Responsive Design - Adjustments for Smaller Screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px; /* Adjust sidebar width on medium screens */
+  }
+
+  .layout-container.collapsed .sidebar {
+    transform: translateX(-100%); /* Keep sidebar hidden on collapse */
+  }
+
+  .main-content {
+    margin-left: 220px; /* Adjust content width when sidebar is expanded */
+  }
+
+  /* Adjust button position for smaller screens */
+  .toggle-btn {
+    top: 15px; /* Make the button more visible on small screens */
+    left: 10px; /* Keep the button in place */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Further reduce sidebar width for small screens */
+  }
+
+  .layout-container.collapsed .sidebar {
+    transform: translateX(-100%); /* Keep sidebar hidden on collapse */
+  }
+
+  .main-content {
+    margin-left: 200px; /* Adjust content width when sidebar is expanded */
+  }
+
+  /* Adjust button position for mobile screens */
+  .toggle-btn {
+    top: 10px; /* Keep the button visible */
+    left: 15px; /* Make it a bit more accessible on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* On very small screens, collapse sidebar by default */
+  .sidebar {
+    width: 0; /* Remove sidebar width */
+  }
+
+  .layout-container.collapsed .sidebar {
+    transform: translateX(-100%); /* Keep sidebar hidden */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove left margin when sidebar is collapsed */
+  }
+
+  /* Adjust toggle button for very small screens */
+  .toggle-btn {
+    top: 10px;
+    left: 10px; /* Keep it in the top-left corner */
+  }
+}
